@@ -1,0 +1,76 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# .NET
+bin/
+obj/
+
+# VSCode settings
+.vscode/
+
+# JetBrains IDE settings
+.idea/
+
+# ASP.NET Core settings
+appsettings.Development.json
+appsettings.json
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Logs
+*.log
+
+# Build outputs
+*.dll
+*.pdb
+*.exe
+*.cache
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# macOS specific
+.DS_Store
+
+# Thumbnails
+Thumbs.db
+
+# JetBrains
+.idea/
+
+# VS config folder
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET Core build configuration
+.vs2017/
+.vs2019/
+
+# ASP.NET
+publish/
+
+# Rider (JetBrains)
+.idea/
+
+# Temporary files
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# Coverage reports
+coverage/
