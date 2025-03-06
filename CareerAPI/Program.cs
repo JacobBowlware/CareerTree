@@ -2,21 +2,15 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CareerAPI.Models;
 using AutoMapper;
-using CareerAPI.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure the database context (using SQL Server here as an example)
+// Connect to SQL Server database & configure services
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Register AutoMapper and the UserProfile - for mapping User to UserDTO and vice versa for SQL operations
-builder.Services.AddAutoMapper(typeof(UserProfile));
-
-// Add Identity services and configure options
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
-    // Configure password requirements, lockout, etc.
+    // Password policy
     options.Password.RequiredLength = 8;
     options.Password.RequireDigit = true;
     options.Password.RequireUppercase = true;
@@ -35,11 +29,15 @@ if (builder.Environment.IsDevelopment())
     });
 }
 
-// Add services to the container.
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Allow letters, digits, and common email characters (even if you’re not using email as username)
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    options.User.RequireUniqueEmail = true;
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();  // Required for API Explorer to work
-
-// Add CORS policy to allow requests from Angular
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
@@ -54,7 +52,6 @@ var app = builder.Build();
 
 app.UseCors("AllowAngular");
 
-// Use Swagger and Swagger UI only in Development environment
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
