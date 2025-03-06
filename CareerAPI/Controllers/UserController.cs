@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CareerAPI.Models;
+using AutoMapper;
+using CareerAPI.DTOs;
 
 namespace CareerAPI.Controllers
 {
@@ -7,22 +9,47 @@ namespace CareerAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        [HttpPost]
-        public IActionResult CreateUser([FromBody] User user)
+        private readonly IMapper _mapper;
+        private readonly UserDbContext userDbContext;
+
+        public UserController(IMapper mapper)
         {
-            if (user.Id > 0 && user.Email is not null)
+            _mapper = mapper;
+        }
+
+        [HttpPost]
+        public ActionResult<UserDTO> CreateUser([FromBody] User user)
+        {
+            if (user.Email is null || user.PasswordHash is null)
             {
-                return Ok(user);
+                return BadRequest();
             }
 
-            return BadRequest();
+            var userDTO = _mapper.Map<UserDTO>(user);
+            return Ok(userDTO);
         }
 
         [HttpGet]
-        public IActionResult GetUser()
+        public ActionResult<UserDTO> GetUser(string id)
         {
-            User user = new User(1, "testingGETUSER-IloveJoslyn-Email@gmail.com");
+            var user = _mapper.Map<UserDTO>(userDbContext.Users.Find(id));
+
+            if (user is null)
+            {
+
+                return NotFound();
+            }
+
             return Ok(user);
+        }
+
+        [HttpGet]
+        public IActionResult TestConnection()
+        {
+            return Ok(new
+            {
+                message = "Backend is connected!"
+            });
         }
     }
 }
