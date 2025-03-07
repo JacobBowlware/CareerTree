@@ -11,7 +11,7 @@ using CareerAPI.DTOs;
 namespace CareerAPI.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -20,10 +20,7 @@ namespace CareerAPI.Controllers
         private readonly IConfiguration _configuration;
         private readonly IPasswordHasher<User> _passwordHasher;
 
-        public AccountController(UserManager<User> userManager,
-                                 SignInManager<User> signInManager,
-                                 IConfiguration configuration,
-                                 IPasswordHasher<User> passwordHasher)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, IPasswordHasher<User> passwordHasher)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -31,10 +28,10 @@ namespace CareerAPI.Controllers
             _passwordHasher = passwordHasher;
         }
 
-        [HttpPost("Signup")]
-        public async Task<IActionResult> SignUp([FromBody] SignupDto signupDto)
+        [HttpPost]
+        public async Task<IActionResult> Signup([FromBody] string email, [FromBody] string password)
         {
-            var existingUser = await _userManager.FindByEmailAsync(signupDto.Email);
+            var existingUser = await _userManager.FindByEmailAsync(email);
             if (existingUser != null)
             {
                 return BadRequest("User already exists.");
@@ -42,13 +39,13 @@ namespace CareerAPI.Controllers
 
             var user = new User
             {
-                Email = signupDto.Email,
-                UserName = signupDto.Email,
-                NormalizedUserName = signupDto.Email.ToUpper(),
+                Email = email,
+                UserName = email,
+                NormalizedUserName = email.ToUpper(),
                 Skills = []
             };
 
-            user.PasswordHash = _passwordHasher.HashPassword(user, signupDto.Password);
+            user.PasswordHash = _passwordHasher.HashPassword(user, password);
 
             var result = await _userManager.CreateAsync(user);
             if (!result.Succeeded)
@@ -60,16 +57,21 @@ namespace CareerAPI.Controllers
             return Ok(new { Token = token });
         }
 
-        [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+        [HttpPost]
+        public async Task<IActionResult> Login([FromBody] string email, [FromBody] string password)
         {
-            var user = await _userManager.FindByEmailAsync(loginDto.Email);
+            if (email == null || password == null)
+            {
+                return BadRequest("Email and password are required.");
+            }
+
+            var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
                 return Unauthorized("Invalid email or password.");
             }
 
-            var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+            var result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
             if (result.Succeeded)
             {
                 var token = GenerateJwtToken(user);

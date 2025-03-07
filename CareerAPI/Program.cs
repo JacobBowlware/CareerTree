@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CareerAPI.Models;
+using CareerAPI.Profiles;
 using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,7 +37,9 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true;
 });
 
+
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddEndpointsApiExplorer();  // Required for API Explorer to work
 builder.Services.AddCors(options =>
 {
