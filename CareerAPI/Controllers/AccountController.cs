@@ -29,7 +29,7 @@ namespace CareerAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Signup([FromBody] string email, [FromBody] string password)
+        public async Task<IActionResult> Signup([FromQuery] string email, [FromQuery] string password)
         {
             var existingUser = await _userManager.FindByEmailAsync(email);
             if (existingUser != null)
@@ -58,7 +58,7 @@ namespace CareerAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] string email, [FromBody] string password)
+        public async Task<IActionResult> Login([FromQuery] string email, [FromQuery] string password)
         {
             if (email == null || password == null)
             {

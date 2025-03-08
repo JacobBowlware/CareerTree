@@ -1,0 +1,21 @@
+<!-- Desktop Navigation -->
+<div class="header">
+  <div class="logoContainer">
+    <img class="logo" src="../../../../assets/logo.png" alt="Career Paths" />
+  </div>
+  <nav class="headerLinkContainer">
+    <a class="headerLink" routerLink="/" routerLinkActive="active">Home</a>
+    <a class="headerLink" routerLink="/about" routerLinkActive="active"
+      >About</a
+    >
+    <!-- Mobile Menu Button -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menuBtn">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <a class="menuLink" mat-menu-item routerLink="/home">Home</a>
+      <a class="menuLink" mat-menu-item routerLink="/about">About</a>
+    </mat-menu>
+  </nav>
+</div>

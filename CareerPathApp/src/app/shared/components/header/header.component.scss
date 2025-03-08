@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menuLink,
+.headerLink{
+    padding: .3rem 1rem;
+    color: green !important;
+    margin: 0;
+}
+
+.headerLinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.menuBtn {
+    display: none;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .headerLink {
+        display: none;
+    }
+
+    .menuBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        width: 3rem;
+    }
+}

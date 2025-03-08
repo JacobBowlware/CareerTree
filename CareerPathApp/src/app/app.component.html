@@ -1,7 +1,11 @@
-<router-outlet></router-outlet>
+<app-header></app-header>
+
 <button (click)="testBackend()">Test Backend Connection</button>
 <p>
   {{ this.backendResponse }}
 </p>
+<div class="outletContainer">
+  <router-outlet></router-outlet>
+</div>
 
-<h1>HELLO</h1>
+<app-footer></app-footer>

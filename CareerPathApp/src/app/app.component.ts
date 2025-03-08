@@ -3,13 +3,16 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { _CareerPathService } from './core/services/careerPath.service';
 import { HttpClient } from '@angular/common/http';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
   standalone: true,
   providers: [HttpClient],
-  imports: [RouterModule], // Required for <router-outlet>
+  imports: [RouterModule, HeaderComponent, FooterComponent], // Required for <router-outlet>
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   backendResponse = '';

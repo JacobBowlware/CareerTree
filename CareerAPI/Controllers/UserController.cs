@@ -42,7 +42,7 @@ namespace CareerAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddSkills([FromBody] string email, [FromBody] string[] skills)
+        public async Task<IActionResult> AddSkills([FromQuery] string email, [FromQuery] string[] skills)
         {
 
             if (string.IsNullOrEmpty(email))
