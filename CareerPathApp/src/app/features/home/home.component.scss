@@ -1,0 +1,107 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    color: var(--var-color-primary);
+    background: var(--var-color-background);
+}
+
+.homeHeroContainer {
+    text-align: left;
+    background: var(--var-color-primary);
+    color: var(--var-color-background);
+    padding: 2rem 1rem 3rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.homeHero {
+    width: 100%;
+}
+
+.homeHeroHeader {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.homeHeroText {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    max-width: 40vw;
+}
+
+.homeHeroBtn {
+    width: 14rem;
+    margin-top: 1rem;
+}
+
+.homeHeroImagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    position: absolute;
+    top: 9rem;
+    background: var(--var-color-background);
+    color: var(--var-color-primary);
+    padding: 2rem 2.5rem 3rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 50vw;
+}
+
+.homeHeroImagesHeader {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.homeHeroImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.homeHeroImage {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--var-color-primary);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .homeHeroContainer  {
+        padding: 8rem 2rem 3rem 5rem;
+        border-bottom-left-radius: 100px;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .homeHeroHeader {
+        font-size: 2.1rem;
+    }
+
+    .homeHeroText {
+        font-size: 1.2rem;
+    }
+}

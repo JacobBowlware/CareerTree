@@ -5,21 +5,57 @@
 
 html {
   @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
     typography: Roboto,
     density: 0,
   ));
-}/* You can add global styles to this file, and also import other style files */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --var-color-primary: #191919;
+  --var-color-background: #E0E0E0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--var-color-background);
+ }
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
 
 
-.mat-mdc-menu-content {
-  background: transparent !important;
-  padding: 0 !important;
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--var-color-background);
+}
+
+.btn {
+  text-align: center;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-weight: 600 !important;
+}
+
+.btnDark {
+  background: var(--var-color-primary);
+  color: var(--var-color-background);
+}
+
+.btnLight {
+  background: var(--var-color-background) !important;
+  color: var(--var-color-primary) !important;
 }
