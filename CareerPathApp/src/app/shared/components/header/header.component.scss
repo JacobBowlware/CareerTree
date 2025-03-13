@@ -3,6 +3,7 @@
     justify-content: space-between;
     width: 100%;
     background: var(--var-color-primary);
+    z-index: 1000;
 }
 
 .menuLink,
@@ -30,6 +31,7 @@
     font-weight: 500;
     transition: all 0.3s;
     margin-left: 1rem;
+    display: none;
 }
 
 .headerLinkMain:hover {
@@ -62,20 +64,51 @@
     width: 10rem;
 }
 
+// Mobile Styles
 @media (max-width: 768px) {
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
     .headerLink {
         display: none;
     }
 
-    .menuBtn {
+    #menuBtn {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
         width: 3rem;
+        background: var(--var-color-background) !important;
+        z-index: 1000;
+        border-radius: 5px;
     }
+
+    #menuBtnIcon {
+        padding: 0;
+    }
+
+    .menuLink {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    ::ng-deep .menuLink:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .mat-mdc-menu-item {
+        background: var(--var-color-background);
+    }
+
+    ::ng-deep .mat-mdc-menu-content {
+        padding: 0 !important;
+    }
+
 }
 
+// Desktop Styles
 @media (min-width: 768px) {
     .logoContainer {
         padding-left: 2rem;

@@ -13,17 +13,19 @@
     text-align: left;
     background: var(--var-color-primary);
     color: var(--var-color-background);
-    padding: 2rem 1rem 3rem 1rem;
+    padding: 1rem;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .homeHero {
     width: 100%;
+    margin: 1rem 0 1rem 0;
 }
 
 .homeHeroHeader {
@@ -36,7 +38,6 @@
     font-size: 1rem;
     margin-bottom: 1rem;
     opacity: 0.9;
-    max-width: 40vw;
 }
 
 .homeHeroBtn {
@@ -50,16 +51,13 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex: 1;
-    position: absolute;
-    top: 9rem;
     background: var(--var-color-background);
     color: var(--var-color-primary);
-    padding: 2rem 2.5rem 3rem 1rem;
+    padding: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
     box-sizing: border-box;
     width: 100%;
-    max-width: 50vw;
 }
 
 .homeHeroImagesHeader {
@@ -95,13 +93,24 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
+
     }
 
     .homeHeroHeader {
         font-size: 2.1rem;
+        max-width: 40vw;
     }
 
     .homeHeroText {
         font-size: 1.2rem;
+        max-width: 40vw;
+    }
+
+    .homeHeroImagesContainer {
+        max-width: 50vw;
+        position: absolute;
+        top: 9rem;
+        padding: 2rem 2.5rem 3rem 1rem;
     }
 }
+
