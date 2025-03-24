@@ -12,7 +12,7 @@
 // Hero CSS
 .homeHeroContainer {
     text-align: left;
-    background: var(--var-color-primary);
+    background: var(--var-color-background-dark);
     color: var(--var-color-background);
     padding: 1rem;
     position: relative;
@@ -20,7 +20,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
@@ -37,40 +36,59 @@
 
 .homeHeroText {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: .6rem;
     opacity: 0.9;
+    text-align: left;
+    width: 100%;
+    font-weight: 400;
 }
 
 .homeHeroBtn {
     width: 14rem;
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.arrow-icon {
+    margin: 0 0 0 .4rem;
+}
+
+.homeHeroBtn:hover .arrow-icon {
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+.homeHeroBtn:hover {
+    opacity: 0.9;
 }
 
 // Hero Review CSS
 .homeHeroReviewContainer {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     flex: 1;
-    background: var(--var-color-background);
-    color: var(--var-color-primary);
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: var(--var-color-primary);
+    color: var(--var-color-background);
+    padding: 1rem 0;
     border-radius: 1rem;
     box-sizing: border-box;
     width: 100%;
 }
 
 .homeHeroReviewHeader {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 500;
     margin: 0;
 }
 
 .homeHeroReview {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
     margin-top: 1rem;
     width: 100%;
@@ -79,37 +97,48 @@
 .homeHeroReviewCard {
     border-radius: 1rem;
     overflow: hidden;
-    border: 1px solid var(--var-color-primary);
-    padding: 1rem;
+    padding: .5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
+    background: #fff;
+}
+
+.homeHeroReviewCardDark {
+    background: var(--var-color-primary) !important;
+    color: var(--var-color-primary);
 }
 
 .homeHeroReviewStars {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+    justify-content: flex-start;
+    margin-bottom: .5rem;
+    width: 100%;
 }
 
-.homeHeroReviewStar {
-    color: var(--var-color-primary);
+.star-icon{
+    color: rgb(232, 180, 24) !important;
 }
 
 .homeHeroReviewText {
-    font-size: 1rem;
+    font-size: .9rem;
     margin-bottom: 1rem;
-    text-align: center;
+    font-weight: 300;
+    text-align: left;
+    font-style: italic;
+    color: var(--var-color-primary);
 }
 
 .homeHeroReviewName {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: .9rem;
+    font-weight: 500;
     margin-bottom: 0.5rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
+    color: var(--var-color-primary);
 }
 
 // General Home CSS
@@ -130,14 +159,20 @@
 
 .homeSectionHeaderText {
     font-size: 1.2rem;
-    margin: 0 0 3rem 0;
+    margin: 0 0 1rem 0;
     text-align: center;
     opacity: 0.9;
-    max-width: 40vw;
+    font-weight: 500;
+    width: 100%;
+    
 }
 
 #homeFeatures {
-
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .homeFeaturesItems {
@@ -160,7 +195,7 @@
 }
 
 .homeFeatureItemHeader {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: .5rem;
     text-align: left;
@@ -169,24 +204,70 @@
 
 .homeFeatureItemText {
     text-align: left;
+    font-size: .9rem;
+    height: 100%;
+}
 
+
+.homeHeroReviewText {
+    height: 100% !important;
+}
+
+.homeHeroTextContainer {
+    max-width: 50rem;
 }
 
 
 // Optimize CSS for desktop (auto optimized for mobile)
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+    .homeHeroReview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .homeHeroReviewStars {
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+
+    .homeHeroReviewCard {
+        padding: 1rem;
+    }
+    
+    .homeHeroReviewName,
+    .homeHeroReviewText {
+        text-align: center;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .homeSectionHeaderText  {
+        font-size: 1.5rem;
+        max-width: 40vw;
+    }
+
+    .homeFeatureItemHeader {
+        font-size: 1.3rem;
+    }
+
+    .homeFeatureItemText {
+        font-size: 1rem;
+    }
+
     .homeHeroContainer  {
         padding: 8rem 2rem 3rem 5rem;
         border-bottom-left-radius: 100px;
         flex-direction: row;
-        justify-content: space-between;
         width: 100%;
         margin-bottom: 5rem;
+    }
+
+    .homeHeroReviewHeader {
+        font-size: 1.5rem;
 
     }
 
     .homeHeroHeader {
-        font-size: 2.1rem;
+        font-size: 2rem;
         max-width: 40vw;
     }
 
@@ -196,21 +277,40 @@
     }
 
     .homeHeroReviewContainer {
+        display: flex;
         max-width: 50vw;
         position: absolute;
-        top: 6rem;
+        top: 10rem;
         right: 0;
         padding: 1.3rem 1rem 1rem 1rem;
+        background: var(--var-color-background);
+        color: var(--var-color-primary);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     #homeFeatures {
-        padding: 12rem 4rem;
+        padding: 17rem 4rem;
 
     }
 
     .homeFeaturesItems {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 2rem;
+        margin-top: 1rem;
     }
+
+    .homeHero:first-child {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        padding-right: 5rem;
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {
 }
 

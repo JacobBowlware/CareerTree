@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: var(--var-color-primary);
+    background: var(--var-color-background-dark);
     z-index: 1000;
 }
 
@@ -47,7 +47,7 @@
     width: 100%;
 }
 
-.menuBtn {
+#menuBtn {
     display: none;
 }
 
@@ -81,7 +81,8 @@
         justify-content: center;
         padding: 1rem;
         width: 3rem;
-        background: var(--var-color-background) !important;
+        background: var(--var-color-background-dark) !important;
+        color: var(--var-color-background);
         z-index: 1000;
         border-radius: 5px;
     }
