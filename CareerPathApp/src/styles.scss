@@ -31,6 +31,9 @@ body {
   overflow-x: hidden;
 }
 
+.outletContainer {
+  min-height: 100vh;
+}
 
 .page {
   min-height: 100vh;
@@ -60,3 +63,4 @@ body {
   background: var(--var-color-background) !important;
   color: var(--var-color-primary) !important;
 }
+
