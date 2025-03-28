@@ -1,13 +1,23 @@
 <!-- Desktop Navigation -->
-<div class="header">
+<div class="header" [class.headerAlt]="!isHomePage">
   <div class="logoContainer">
     <a class="headerLink headerLinkLogo" routerLink="/">
-      <img class="headerImg" src="assets/CareerPathLogoLight.svg" />
+      <img class="headerImg" [src]="imgSource" />
     </a>
   </div>
   <nav class="headerLinkContainer">
-    <a class="headerLink" routerLink="/" routerLinkActive="active">Home</a>
-    <a class="headerLink" routerLink="/about" routerLinkActive="active">
+    <a
+      class="headerLink"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a
+      class="headerLink headerLinkHighlight"
+      routerLink="/about"
+      routerLinkActive="active"
+    >
       About
     </a>
     <a
