@@ -12,8 +12,10 @@ html {
 
 :root {
   --var-color-primary: #191919;
-  --var-color-background: #fff;
+  --var-color-light: #ffffff;
+  --var-color-background: #ffffff;
   --var-color-background-dark: #282828;
+  --var-color-highlight: #040a02;
 }
 
 * {
@@ -63,7 +65,7 @@ body {
 }
 
 .btnLight {
-  background: var(--var-color-background) !important;
+  background: var(--var-color-light) !important;
   color: var(--var-color-primary) !important;
 }
 

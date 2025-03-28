@@ -13,7 +13,7 @@
 .homeHeroContainer {
     text-align: left;
     background: var(--var-color-background-dark);
-    color: var(--var-color-background);
+    color: var(--var-color-light);
     padding: 1rem;
     position: relative;
     display: flex;
@@ -279,7 +279,7 @@
         top: 10rem;
         right: 0;
         padding: 1.3rem 1rem 1rem 1rem;
-        background: var(--var-color-background);
+        background: var(--var-color-light);
         color: var(--var-color-primary);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
