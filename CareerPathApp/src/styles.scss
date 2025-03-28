@@ -27,7 +27,10 @@ html, body {
 
 body { 
   margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Manrope", sans-serif !important;
+  font-variation-settings: 
+    'wdth' 100;
+  font-style: normal;
   overflow-x: hidden;
 }
 

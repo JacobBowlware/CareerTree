@@ -126,10 +126,11 @@
 .homeHeroReviewText {
     font-size: .9rem;
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     text-align: left;
     font-style: italic;
     color: var(--var-color-primary);
+    height: 100% !important;
 }
 
 .homeHeroReviewName {
@@ -206,11 +207,6 @@
     text-align: left;
     font-size: .9rem;
     height: 100%;
-}
-
-
-.homeHeroReviewText {
-    height: 100% !important;
 }
 
 .homeHeroTextContainer {
