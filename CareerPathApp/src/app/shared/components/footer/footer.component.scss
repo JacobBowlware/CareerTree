@@ -7,13 +7,12 @@
 }
 
 .footerContainer {
-    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    padding: 1rem;
+    max-width: 1600px;
 }
 
 .footerContainerColumn {
@@ -50,6 +49,10 @@
 
     .footerContainerColumnHeader {
         font-size: 1.5rem;;
+    }
+
+    .footerContainer {
+        padding-left: 4rem;
     }
 }
 

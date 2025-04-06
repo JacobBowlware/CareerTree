@@ -7,7 +7,8 @@ import { Router, RouterModule } from '@angular/router';
 
 
 
-
+//  If it tells them, “You’re 3 Udemy courses away from being PM-ready,” you’re golden.
+//  If it tells them, “Here’s a bunch of affiliate links,” they’ll bounce.
 @Component({
   selector: 'app-header',
   imports: [ MatMenuModule, MatIconModule, MatButtonModule, RouterModule],

@@ -1,40 +1,42 @@
 <!-- Desktop Navigation -->
 <div class="header" [class.headerAlt]="!isHomePage">
-  <div class="logoContainer">
-    <a class="headerLink headerLinkLogo" routerLink="/">
-      <img class="headerImg" [src]="imgSource" />
-    </a>
+  <div class="headerContent" [class.headerAlt]="!isHomePage">
+    <div class="logoContainer">
+      <a id="headerLogo" class="headerLink headerLinkLogo" routerLink="/">
+        <mat-icon class="logoIcon">radio_button_checked</mat-icon>
+        Clarity
+      </a>
+    </div>
+    <nav class="headerLinkContainer">
+      <a
+        class="headerLink"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a
+        class="headerLink headerLinkHighlight"
+        routerLink="/about"
+        routerLinkActive="active"
+      >
+        About
+      </a>
+      <a
+        class="btn headerLinkMain"
+        routerLink="/signup"
+        routerLinkActive="active"
+      >
+        Get Started
+      </a>
+      <!-- Mobile Menu Button -->
+      <button mat-icon-button [matMenuTriggerFor]="menu" id="menuBtn">
+        <mat-icon id="menuBtnIcon">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <a class="menuLink" mat-menu-item routerLink="/home">Home</a>
+        <a class="menuLink" mat-menu-item routerLink="/about">About</a>
+      </mat-menu>
+    </nav>
   </div>
-  <nav class="headerLinkContainer">
-    <a
-      class="headerLink"
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
-    >
-    <a
-      class="headerLink headerLinkHighlight"
-      routerLink="/about"
-      routerLinkActive="active"
-    >
-      About
-    </a>
-    <a
-      class="btn headerLinkMain"
-      routerLink="/signup"
-      routerLinkActive="active"
-    >
-      Get Started
-    </a>
-    <!-- Mobile Menu Button -->
-    <button mat-icon-button [matMenuTriggerFor]="menu" id="menuBtn">
-      <mat-icon id="menuBtnIcon">menu</mat-icon>
-    </button>
-
-    <mat-menu #menu="matMenu">
-      <a class="menuLink" mat-menu-item routerLink="/home">Home</a>
-      <a class="menuLink" mat-menu-item routerLink="/about">About</a>
-    </mat-menu>
-  </nav>
 </div>

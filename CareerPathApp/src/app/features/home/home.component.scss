@@ -65,9 +65,9 @@
     opacity: 0.9;
 }
 
-// Hero Review CSS
-.homeHeroReviewContainer {
-    display: none;
+// Hero Start CSS
+.homeHeroStartContainer {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -80,21 +80,28 @@
     width: 100%;
 }
 
-.homeHeroReviewHeader {
-    font-size: 1.2rem;
-    font-weight: 500;
+.homeHeroStartHeader {
+    font-size: 1rem;
+    font-weight: 600;
     margin: 0;
-}
-
-.homeHeroReview {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-    margin-top: 1rem;
+    padding: .5rem 0;
+    text-align: left;
     width: 100%;
 }
 
-.homeHeroReviewCard {
+.homeHeroStartHeaderName {
+    font-weight: 400;
+}
+
+.homeHeroStart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.homeHeroStartCard {
     border-radius: 1rem;
     overflow: hidden;
     padding: .5rem;
@@ -107,12 +114,12 @@
     background: #fff;
 }
 
-.homeHeroReviewCardDark {
+.homeHeroStartCardDark {
     background: var(--var-color-primary) !important;
     color: var(--var-color-primary);
 }
 
-.homeHeroReviewStars {
+.homeHeroStartStars {
     display: flex;
     justify-content: flex-start;
     margin-bottom: .5rem;
@@ -123,23 +130,73 @@
     color: rgb(232, 180, 24) !important;
 }
 
-.homeHeroReviewText {
-    font-size: .9rem;
-    margin-bottom: 1rem;
-    font-weight: 400;
+.homeHeroStartText {
+    margin: .5rem 0 1rem 0;
+    font-weight: 600;
     text-align: left;
-    font-style: italic;
+    width: 100%;
     color: var(--var-color-primary);
-    height: 100% !important;
 }
 
-.homeHeroReviewName {
+.homeHeroStartName {
     font-size: .9rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     text-align: left;
     width: 100%;
     color: var(--var-color-primary);
+}
+
+
+// Resume upload CSS
+.uploadBox {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid black;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #ccc;
+    border-radius: 0.3rem;
+    padding: 2rem 1rem;
+    cursor: pointer;
+}
+
+.uploadTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    color: var(--var-color-primary);
+    font-weight: 400 !important;
+    transition: all 0.3s ease;
+}
+
+.uploadText {
+    font-size: 1rem;
+    margin: .5rem 0 0 0;
+    text-align: center;
+    width: 100%;
+    color: var(--var-color-primary);
+    font-weight: 600;
+}
+
+.uploadTextFiles {
+    font-size: .9rem;
+    font-weight: 300;
+    margin-top: .3rem;
+}
+
+.uploadIcon {
+    color: var(--var-color-primary);
+    margin-bottom: .5rem;
+    font-size: 2rem;
+    overflow: visible;
 }
 
 // General Home CSS
@@ -216,23 +273,17 @@
 
 // Optimize CSS for desktop (auto optimized for mobile)
 @media (min-width: 1024px) {
-    .homeHeroReview {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .homeHeroReviewStars {
+    .homeHeroStartStars {
         margin-bottom: 1rem;
         justify-content: center;
     }
 
-    .homeHeroReviewCard {
+    .homeHeroStartCard {
         padding: 1rem;
     }
     
-    .homeHeroReviewName,
-    .homeHeroReviewText {
-        text-align: center;
-        font-size: 1rem;
+    .homeHeroStartName,
+    .homeHeroStartText {
         width: 100%;
     }
     
@@ -257,8 +308,8 @@
         margin-bottom: 5rem;
     }
 
-    .homeHeroReviewHeader {
-        font-size: 1.5rem;
+    .homeHeroStartHeader {
+        font-size: 1.3rem;
 
     }
 
@@ -272,16 +323,15 @@
         max-width: 40vw;
     }
 
-    .homeHeroReviewContainer {
-        display: flex;
-        max-width: 50vw;
+    .homeHeroStartContainer {
+        max-width: 40vw;
         position: absolute;
-        top: 10rem;
+        top: 20rem;
         right: 0;
         padding: 1.3rem 1rem 1rem 1rem;
         background: var(--var-color-light);
         color: var(--var-color-primary);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     #homeFeatures {

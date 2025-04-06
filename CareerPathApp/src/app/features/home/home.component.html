@@ -2,11 +2,14 @@
   <div class="homeHeroContainer">
     <div class="homeHero">
       <div class="homeHeroTextContainer">
-        <h1 class="homeHeroHeader">Analyze Your Skills, Plan Your Growth.</h1>
+        <h1 class="homeHeroHeader">
+          Discover the next career moves you’re already qualified for.
+        </h1>
         <p class="homeHeroText">
           Utilizing your resume and experiences, we analyze your skills to
           generate the best career paths for you. Complete with a skill gap
-          analysis and learning resources to help get you started.
+          analysis and resources to help you learn them - Let us bring your
+          career some Clarity
         </p>
         <button class="btn btnLight homeHeroBtn" (click)="handleGetStarted()">
           Get Started <mat-icon class="arrow-icon">arrow_forward</mat-icon>
@@ -14,61 +17,90 @@
       </div>
     </div>
     <div class="homeHero">
-      <div class="homeHeroReviewContainer">
-        <h2 class="homeHeroReviewHeader">
-          What Our Users Are Saying About CareerPath
+      <div class="homeHeroStartContainer">
+        <h2 class="homeHeroStartHeader">
+          <!-- <span class="homeHeroStartHeaderName"> -Carl Jung </span> -->
+          Clarity isn't a luxury-it's your next job offer.
         </h2>
-        <div class="homeHeroReview">
-          <div class="homeHeroReviewCard">
-            <p class="homeHeroReviewText">
+        <p class="homeHeroStartText">
+          Upload your resume to see exactly where you're headed
+        </p>
+        <div class="homeHeroStart">
+          <div
+            class="uploadBox"
+            (dragover)="onDragOver($event)"
+            (dragleave)="onDragLeave()"
+            (drop)="onDrop($event)"
+            (click)="fileInput.click()"
+          >
+            <input
+              #fileInput
+              type="file"
+              accept=".pdf,.doc,.docx"
+              (change)="handleFileUpload($event)"
+              hidden
+            />
+            <div class="btn uploadTextContainer">
+              <mat-icon class="uploadIcon">cloud_upload</mat-icon>
+              <span *ngIf="!loading" class="uploadText">
+                Drag your resume here or click to upload
+              </span>
+              <span *ngIf="!loading" class="uploadTextFiles">
+                Acceptable file types: PDF, DOC, DOCX
+              </span>
+              <span *ngIf="loading" class="uploadText">Processing....</span>
+            </div>
+          </div>
+          <!-- <div class="homeHeroStartCard">
+            <p class="homeHeroStartText">
               Transitioning from SWE into PM was a lot easier than I imagined.
               Turns out, I only needed to learn a couple more skills.
             </p>
-            <div class="homeHeroReviewStars">
+            <div class="homeHeroStartStars">
               <mat-icon class="star-icon" *ngFor="let star of counter(5)"
                 >star</mat-icon
               >
             </div>
-            <p class="homeHeroReviewName">John D.</p>
+            <p class="homeHeroStartName">John D.</p>
           </div>
-          <div class="homeHeroReviewCard">
-            <p class="homeHeroReviewText">
+          <div class="homeHeroStartCard">
+            <p class="homeHeroStartText">
               Being able to plan out my career growth was a game changer.
               Especially since it integrates into my calandar, all I have to do
               is follow the plan.
             </p>
-            <div class="homeHeroReviewStars">
+            <div class="homeHeroStartStars">
               <mat-icon class="star-icon" *ngFor="let star of counter(4)"
                 >star</mat-icon
               >
             </div>
-            <p class="homeHeroReviewName">Sarah S.</p>
+            <p class="homeHeroStartName">Sarah S.</p>
           </div>
-          <div class="homeHeroReviewCard">
-            <p class="homeHeroReviewText">
+          <div class="homeHeroStartCard">
+            <p class="homeHeroStartText">
               No two career paths are the same, but this tool helped me find the
               right one for me. I already had the skills I needed, I just needed
               to know where to apply them.
             </p>
-            <div class="homeHeroReviewStars">
+            <div class="homeHeroStartStars">
               <mat-icon class="star-icon" *ngFor="let star of counter(4)"
                 >star</mat-icon
               >
             </div>
-            <p class="homeHeroReviewName">Alex S.</p>
+            <p class="homeHeroStartName">Alex S.</p>
           </div>
-          <div class="homeHeroReviewCard">
-            <p class="homeHeroReviewText">
+          <div class="homeHeroStartCard">
+            <p class="homeHeroStartText">
               I don't overthink my career anymore. I am following the plan and I
               can see where it will take me. It's a relief...
             </p>
-            <div class="homeHeroReviewStars">
+            <div class="homeHeroStartStars">
               <mat-icon class="star-icon" *ngFor="let star of counter(5)"
                 >star</mat-icon
               >
             </div>
-            <p class="homeHeroReviewName">Joslyn K.</p>
-          </div>
+            <p class="homeHeroStartName">Joslyn K.</p>
+          </div> -->
         </div>
       </div>
     </div>
