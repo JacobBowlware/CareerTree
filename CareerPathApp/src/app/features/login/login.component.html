@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="page login">
+  <div class="loginCard">
+    <div class="loginCardHeader">
+      <h1 class="loginCardHeaderText">Welcome back!</h1>
+      <p class="loginCardSubText">Login to your account</p>
+    </div>
+    <form class="loginCardForm">
+      <input
+        type="email"
+        class="loginCardFormInput"
+        placeholder="Email Address"
+      />
+      <input
+        type="password"
+        class="loginCardFormInput"
+        placeholder="Password"
+      />
+      <button class="btn loginCardFormBtn">Login</button>
+    </form>
+    <p class="loginCardText">
+      Don't have an account?
+      <a class="link loginCardLink" routerLink="/signup">Signup</a>
+    </p>
+  </div>
+</div>

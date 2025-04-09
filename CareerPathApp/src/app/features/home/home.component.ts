@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
@@ -6,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [MatIconModule, CommonModule],
+  imports: [MatIconModule, CommonModule, HttpClientModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -14,7 +15,7 @@ export class HomeComponent {
   loading: boolean = false;
   dragOver: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   handleGetStarted(): void {
     this.router.navigate(['/signup']);
@@ -22,10 +23,24 @@ export class HomeComponent {
 
 
   handleFileUpload(file: any): void {
-      this.loading = true;
+    this.loading = true;
 
-      // Upload file to backend
-      console.log("File uploaded:", file);
+    const formData = new FormData();
+    formData.append('resume', file);
+  
+    this.http.post('/api/resume/upload', formData).subscribe({
+      next: (res) => {
+        console.log('Upload successful:', res);
+        // redirect to either skill assessment or signup page
+      },
+      error: (err) => {
+        console.error('Upload failed:', err);
+        // show error UI
+      },
+      complete: () => {
+        this.loading = false;
+      }
+    });
   }
 
   onDragOver(evt: DragEvent) {

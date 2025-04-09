@@ -72,9 +72,9 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex: 1;
-    background: var(--var-color-primary);
-    color: var(--var-color-background);
-    padding: 1rem 0;
+    background: var(--var-color-light);
+    color: var(--var-color-primary);
+    padding: 1rem;
     border-radius: 1rem;
     box-sizing: border-box;
     width: 100%;
@@ -285,6 +285,7 @@
     .homeHeroStartName,
     .homeHeroStartText {
         width: 100%;
+        color: var(--var-color-primary);
     }
     
     .homeSectionHeaderText  {
@@ -324,7 +325,7 @@
     }
 
     .homeHeroStartContainer {
-        max-width: 40vw;
+        max-width: 45vw;
         position: absolute;
         top: 20rem;
         right: 0;

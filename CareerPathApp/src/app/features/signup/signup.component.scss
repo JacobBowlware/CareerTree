@@ -1,0 +1,73 @@
+
+.signup {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.signupCardForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.signupCardHeader {
+    width: 100%;
+}
+
+.signupCardForm {
+    width: 100%;
+}
+
+.signupCardText {
+    width: 100%;
+    margin-top: .5rem;
+    font-weight: 300;
+}
+
+.signupCardFormInput {
+    width: 100%;
+    padding: .5rem;
+    margin: 0 0 .5rem 0;
+}
+
+.signupCardHeaderText {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: left;
+}
+
+.signupCardSubText {
+    font-size: 1rem;
+    color: var(--var-color-text-secondary);
+    margin-bottom: 1.4rem;
+}
+
+.signupCardFormBtn {
+    background: var(--var-color-primary);
+    color: var(--var-color-background);
+    padding: .4rem 2rem;
+    width: 100%;
+}
+
+.signupCardFormBtn:focus {
+    outline: none;
+    background: var(--var-color-primary);
+    color: var(--var-color-background);
+}
